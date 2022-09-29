@@ -7,37 +7,19 @@ public class Aluno {
 	private Curso curso;
 	private Disciplina disciplina; 
 
-	public Aluno(String nome, 
-			     int idade, 
-			     String nomeDoCurso,
-			     String periodoDoCurso,
-			     String coordenadorDoCurso) {
-		
+	public Aluno(String nome, int idade, String nomeDoCurso, String periodoDoCurso, String coordenadorDoCurso) {
 		this.nome = nome;
 		this.idade = idade;
-		
-		Curso objCurso = new Curso(nomeDoCurso, 
-								   periodoDoCurso, 
-								   coordenadorDoCurso);
-		
-		this.curso = objCurso;
-		
-		objCurso = null;
-		
+		this.curso = new Curso(nomeDoCurso, periodoDoCurso, coordenadorDoCurso);
 	}
 
-	
-	public Aluno(String nome, 
-			     int idade,
-			     Curso curso) {
-		
+	public Aluno(String nome, int idade, Curso curso) {
 		this.nome = nome;
 		this.idade = idade;
 		this.curso = curso;
 	}
 	
 	public Aluno() {
-		
 	}
 	
 	public String getNome() {
